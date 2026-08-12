@@ -5,7 +5,7 @@ scores trading-setup fit. Does not predict direction, place trades, or
 store any data — a single stateless endpoint plus a health check.
 
 Start locally: uvicorn main:app --reload
-Deployed on Railway (or similar): uvicorn main:app --host 0.0.0.0 --port $PORT
+Deployed on Render (or similar): uvicorn main:app --host 0.0.0.0 --port $PORT
 """
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
