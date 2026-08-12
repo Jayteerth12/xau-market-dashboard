@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>XAU Market Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>🥇 XAU Market Dashboard</h1>
+    <p class="tagline">Classifies the current market environment and scores setup fit. Does not predict direction.</p>
+  </header>
+
+  <section class="panel" id="settings-panel">
+    <h2>Backend</h2>
+    <div class="row">
+      <label for="api-base">API base URL (your Railway deployment)</label>
+      <div class="inline">
+        <input type="text" id="api-base" placeholder="https://your-app.up.railway.app">
+        <button id="save-api-base">Save</button>
+      </div>
+      <p class="hint" id="api-status">Not connected.</p>
+    </div>
+  </section>
+
+  <section class="panel" id="controls-panel">
+    <h2>Query</h2>
+    <div class="row inline wrap">
+      <div>
+        <label for="symbol">Instrument (any OANDA symbol)</label>
+        <input type="text" id="symbol" value="XAUUSD">
+      </div>
+      <div>
+        <label for="timeframe">Timeframe</label>
+        <select id="timeframe">
+          <option value="15m">15m</option>
+          <option value="1h" selected>1h</option>
+          <option value="4h">4h</option>
+          <option value="1d">1d</option>
+        </select>
+      </div>
+      <div>
+        <button id="analyze">Analyze</button>
+      </div>
+    </div>
+    <div class="row">
+      <label>Setups I trade</label>
+      <div id="setups-checkboxes" class="checkbox-group"></div>
+    </div>
+  </section>
+
+  <section id="results"></section>
+
+  <script src="app.js"></script>
+</body>
+</html>
